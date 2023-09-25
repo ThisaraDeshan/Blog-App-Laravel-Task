@@ -17,6 +17,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Auth::routes();
 
+Route::get('/admin', function () {
+    return view('admin.index');
+})->middleware(['auth','role:admin'])->name('admin.index');
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+

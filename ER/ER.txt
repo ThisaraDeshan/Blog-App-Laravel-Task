@@ -1,17 +1,10 @@
 erDiagram
-
+ 
   blog_categories ||--o{ blog_post_categories : "FK category_id"
   blog_categories ||--o{ blog_categories : "FK parent_id"
   blog_categories ||--o{ blog_posts : "FK parent_id"
 
-
-  blog_post_categories }o--|| blog_categories : "FK category_id"
   blog_post_categories ||--o{ blog_posts : "FK post_id"
-
-
-  blog_posts }o--|| blog_categories : "FK parent_id"
-  blog_posts }o--|| blog_post_categories : "FK post_id"
-
 
   blog_post_comments }o--|| blog_posts : "FK post_id"
   blog_post_comments ||--o{ blog_post_comments : "FK parent_id"
@@ -22,5 +15,3 @@ erDiagram
   blog_post_tags }o--|| blog_posts : "FK post_id"
   blog_post_tags }o--|| blog_tags : "FK tag_id"
 
-
-  blog_tags ||--o{ blog_post_tags : "FK tag_id"

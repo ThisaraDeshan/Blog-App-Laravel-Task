@@ -20,7 +20,7 @@ return new class extends Migration
             $table->text('content')->notNullable();
             $table->timestamps();
 
-            $table->foreign('post_id')->references('id')->on('blog_posts');
+            // $table->foreign('post_id')->references('id')->on('blog_posts');
             $table->foreign('parent_id')->references('id')->on('blog_post_comments');
         });
     }

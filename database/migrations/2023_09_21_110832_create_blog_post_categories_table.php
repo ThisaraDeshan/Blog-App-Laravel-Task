@@ -17,7 +17,7 @@ return new class extends Migration
             $table->unsignedBigInteger('category_id')->notNullable();
             $table->timestamps();
 
-            $table->foreign('post_id')->references('id')->on('blog_posts')->onDelete('cascade');
+            // $table->foreign('post_id')->references('id')->on('blog_posts');
             $table->foreign('category_id')->references('id')->on('blog_categories');
 
         });
